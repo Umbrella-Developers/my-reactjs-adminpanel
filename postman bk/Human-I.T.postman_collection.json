@@ -1,0 +1,1480 @@
+{
+	"info": {
+		"_postman_id": "6840eb68-ec0b-4cd9-ab4c-d006afb3d5eb",
+		"name": "Human-I.T",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32451854",
+		"_collection_link": "https://orange-station-401115.postman.co/workspace/laravel-boilerplate-api-api-dev~9f844931-0c75-4a70-b6a2-396399d3daef/collection/32451854-6840eb68-ec0b-4cd9-ab4c-d006afb3d5eb?action=share&source=collection_link&creator=32451854"
+	},
+	"item": [
+		{
+			"name": "Configurations",
+			"item": [
+				{
+					"name": "Configurations List API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/configurations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Single Configuration API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/configurations/20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"configurations",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update All Configurations API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/configurations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login Registration API's",
+			"item": [
+				{
+					"name": "User login API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/login?email=ali_naeem89@live.com&password=testpassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ali_naeem89@live.com"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "testpassword"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User registration API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/register?name=New User2&email=alieallshore@gmail.com&password=password&c_password=password&phone_number=+923456693379",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New User2"
+								},
+								{
+									"key": "email",
+									"value": "alieallshore@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								},
+								{
+									"key": "c_password",
+									"value": "password"
+								},
+								{
+									"key": "phone_number",
+									"value": "+923456693379"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User profile API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/18",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout user API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single User Delete API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/19",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of All users API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Password Update API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/updatePassword/18?password=testpassword&confirm_password=testpassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"updatePassword",
+								"18"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "testpassword"
+								},
+								{
+									"key": "confirm_password",
+									"value": "testpassword"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Password In Case of Forgot Password API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/verifyEmail/?email=ali_naeem89@live.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"verifyEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ali_naeem89@live.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Token verified from the email sent to users address API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/passwordResetEmail/?secret_token=pUgN0I80H2fJVJDzlq04rnp4GI4udw87uZ0UVWHxeWrKOrLY4iopgnZD5vF3&email=ali_naeem89%40live.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"passwordResetEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "secret_token",
+									"value": "pUgN0I80H2fJVJDzlq04rnp4GI4udw87uZ0UVWHxeWrKOrLY4iopgnZD5vF3"
+								},
+								{
+									"key": "email",
+									"value": "ali_naeem89%40live.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new password update after token verification from the email API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/newPassword/?secret_token=pUgN0I80H2fJVJDzlq04rnp4GI4udw87uZ0UVWHxeWrKOrLY4iopgnZD5vF3&email=ali_naeem89%40live.com&password=password&confirm_password=password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"newPassword",
+								""
+							],
+							"query": [
+								{
+									"key": "secret_token",
+									"value": "pUgN0I80H2fJVJDzlq04rnp4GI4udw87uZ0UVWHxeWrKOrLY4iopgnZD5vF3"
+								},
+								{
+									"key": "email",
+									"value": "ali_naeem89%40live.com"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								},
+								{
+									"key": "confirm_password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User update data or role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/18?name=Wajid Asim&role_id=17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"18"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Wajid Asim"
+								},
+								{
+									"key": "role_id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2FA Code Verification from the email sent to users email address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/store?two_factor_code=150789&user_id=47",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"store"
+							],
+							"query": [
+								{
+									"key": "two_factor_code",
+									"value": "150789"
+								},
+								{
+									"key": "user_id",
+									"value": "47"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resent 2FA Code ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/resend?user_id=49",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"resend"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "49"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "List down all pages API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sinlge Page Fetch API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pages/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Page API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pages/2?author=Ali baig",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pages",
+								"2"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Test Title ",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Test Description",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "Ali baig"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Page API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pages/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store New Page API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"type": "file",
+									"src": "/C:/Users/ali_n/OneDrive/Pictures/ab306329126_447348464078690_3550339878274365316_n.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pages?title=Test page 2&description=Page Description 2&author=Ali Baig",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pages"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Test page 2"
+								},
+								{
+									"key": "description",
+									"value": "Page Description 2"
+								},
+								{
+									"key": "author",
+									"value": "Ali Baig"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "Permissions List  API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/permissions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store New Permission API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/permissions?name=tests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "guard_name",
+									"value": "sanctum",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "tests"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single And Multiple Permission Delete Along with role_permissions API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permission_id[0]",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[1]",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[2]",
+									"value": "26",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[3]",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/permissions/745",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								"745"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Permission Fetch API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/permissions/744",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								"744"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Permission Name API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/permissions/733?name=posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								"733"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "posts"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Roles List API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role Store API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/roles?name=Test Role API",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test Role API"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Role Fetched API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/roles/29",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role Update API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/roles/29?name=Test Role API Updated",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"29"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test Role API Updated"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Selected Role Delete API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/roles/29",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Associate Permission/s to Selected Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permission_id[0]",
+									"value": "dashboards-index",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[1]",
+									"value": "dashboards-show",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[2]",
+									"value": "dashboards-create",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[3]",
+									"value": "dashboards-store",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[4]",
+									"value": "dashboards-edit",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[5]",
+									"value": "dashboards-update",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[6]",
+									"value": "dashboards-destroy",
+									"type": "text"
+								},
+								{
+									"key": "permission_id[7]",
+									"value": "dashboards-search",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/roles/rolePermissionAssociation/17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"rolePermissionAssociation",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application Logs",
+			"item": [
+				{
+					"name": "Fetch logs data API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/applicationlogs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"applicationlogs"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2024-05-14",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "2024-05-18",
+									"disabled": true
+								},
+								{
+									"key": "search_module",
+									"value": "role",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FAQ's",
+			"item": [
+				{
+					"name": "Store FAQs data API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/faqs?question=What is your question ?&answer=There is the answer for your firsty question.&section=Pages&sort=1&status=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"faqs"
+							],
+							"query": [
+								{
+									"key": "question",
+									"value": "What is your question ?"
+								},
+								{
+									"key": "answer",
+									"value": "There is the answer for your firsty question."
+								},
+								{
+									"key": "section",
+									"value": "Pages"
+								},
+								{
+									"key": "sort",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All FAQs API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/faqs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single FAQs data fetch API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/faqs/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"faqs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update FAQs API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/faqs/1?question=&answer&section&sort&status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"faqs",
+								"1"
+							],
+							"query": [
+								{
+									"key": "question",
+									"value": ""
+								},
+								{
+									"key": "answer",
+									"value": null
+								},
+								{
+									"key": "section",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								},
+								{
+									"key": "status",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete FAQs single data API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/faqs/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"faqs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
